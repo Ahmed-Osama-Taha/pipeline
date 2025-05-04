@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: give permission to script
-        run: sudo chmod +x ./script.sh
+        run: sudo chmod +x ./scrp.sh
 
       - name: run script
-        run: ./script.sh
+        run: ./scrp.sh
 
       - name: list files
         run: ls -la
