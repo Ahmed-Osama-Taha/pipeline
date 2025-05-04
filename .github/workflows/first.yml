@@ -4,8 +4,20 @@ on: push
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ${ { matrix.os } }
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        image: [ubuntu-22.04, windows-2022, macos-13]
 
     steps:
-      - name: Checkout code
-        run: echo "Ahmed Taha"
+      - name: docker setup
+        uses: docker/setup-buildx-action@v2
+
+      - name: echo docker details
+        run: echo info
+
+      - name: run image
+        run: docker run --rm -v $GITHUB_WORKSPACE:/workspace -w /workspace ${ { matrix.image } } bash -c "echo hello world"
+
+
