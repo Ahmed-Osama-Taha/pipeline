@@ -8,13 +8,13 @@ jobs:
   
 
     steps:
-      - name: docker setup
-        uses: docker/setup-buildx-action@v2
+      - name: checkout code
+        uses: actions/checkout@v2
 
-      - name: echo docker details
-        run: echo info
+      - name: give permission to script
+        run: chmod +x ./script.sh
 
-      - name: run image
-        run: docker run hello-world
+      - name: run script
+        run: ./script.sh
 
 
