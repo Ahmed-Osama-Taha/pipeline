@@ -1,11 +1,11 @@
-name: CI Pipeline
+name: CI Pipeline_2
 
 on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
-        run: echo "hello world ahmed"
+        uses: actions/checkout@v3
