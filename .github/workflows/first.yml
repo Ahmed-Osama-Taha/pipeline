@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: give permission to script
-        run: chmod +x ./script.sh
+        run: sudo chmod +x ./script.sh
 
       - name: run script
         run: ./script.sh
